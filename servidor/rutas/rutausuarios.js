@@ -2,7 +2,6 @@ const express = require('express');
 const config = require('../config');
 const router = express.Router();
 const usuarios = require('../servicios/contextousuarios');
-const bcrypt = require('bcrypt');
 const jwt = require('../middleware/jwtoken');
 
 /* GET usuarios */
@@ -47,12 +46,12 @@ router.post("/register", async (req, res) => {
       return res.status(409).send("El usuario ya existe. Por favor use ese nombre de usuario para hacer login");
     }
    
-    encryptedPassword = await bcrypt.hash(password, 10);
+   // encryptedPassword = await bcrypt.hash(password, 10);
 
     // crea el usuario en la base de datos
     const user = await usuarios.create({      
       username: username.toLowerCase(), 
-      password: encryptedPassword     
+      password: "12345"    
     });
 
     // Crea el token
