@@ -2,7 +2,11 @@ export interface Usuario {
   id: number;
   username: string;
   password: string;
-  firstName: string;
-  lastName: string;
   token: string;
+}
+
+export interface UsuarioResponse{
+  mensaje: string,
+  token: string,
+  userId:number
 }

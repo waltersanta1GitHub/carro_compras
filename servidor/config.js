@@ -7,5 +7,11 @@ const config = {
       database: 'carro_compras',         
     },
     listPerPage: 10,
+    TOKEN_KEY: '$$Marina1Sandra2Soledad3$$'
+
   };
+
+
+
+
   module.exports = config;

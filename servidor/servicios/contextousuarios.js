@@ -17,13 +17,24 @@ async function getAllUsers(page = 1){
   }
 }
 
+// findOne
+async function findOne(username){
+ 
+  return await db.query(
+    `SELECT * 
+    FROM users WHERE username = '${username}'
+    LIMIT 1;
+    `
+  ); 
+}
+
 
 async function create(usuario){
     const result = await db.query(
       `INSERT INTO users 
       ( username, password,created_at) 
       VALUES 
-      (${usuario.username}, ${usuario.password}, ${usuario.created_at})`
+      ('${usuario.username}', '${usuario.password}',   NOW())`
     );
   
     let message = 'Error creando el usuario';
@@ -56,6 +67,7 @@ async function create(usuario){
 
 module.exports = {
   getMultiple: getAllUsers,
+  findOne,
   create,
   update  
 }
