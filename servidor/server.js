@@ -2,7 +2,10 @@
 
 const express = require("express");
 const app = express();
-const operaciones = require('./rutas/rutaservidor');
+
+const productos = require('./rutas/rutaproducto');
+const usuarios = require('./rutas/rutausuarios');
+
 const port = 3000;
 app.use(express.json());
 app.use(
@@ -18,7 +21,10 @@ app.get("/", (req, res) => {
 
 
 
-app.use("/operaciones", operaciones);
+app.use("/productos", productos);
+app.use("/usuarios", usuarios);
+
+
 /* Error handler middleware */
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
@@ -26,7 +32,6 @@ app.use((err, req, res, next) => {
   res.status(statusCode).json({ message: err.message });
   return;
 });
-
 
 
 
