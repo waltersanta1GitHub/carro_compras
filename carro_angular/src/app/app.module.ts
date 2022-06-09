@@ -38,6 +38,7 @@ import { RegisterComponent } from './register/register.component';
 import { ShoppingcardlistComponent } from './components/shoppingcardlist/shoppingcardlist.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PaypageComponent } from './paypage/paypage.component';
+import { CarroGuard } from './services/carro.guard';
 
 
 @NgModule({
@@ -62,7 +63,7 @@ import { PaypageComponent } from './paypage/paypage.component';
     MatCardModule,MatButtonModule,MatCheckboxModule,MatDatepickerModule,MatDialogModule,MatFormFieldModule,MatIconModule,MatInputModule,MatMenuModule,
     MatProgressBarModule,MatProgressSpinnerModule,MatSelectModule,MatSidenavModule,MatStepperModule,MatToolbarModule,MatTabsModule,MatCommonModule,
   ],
-  providers: [
+  providers: [ CarroGuard,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
