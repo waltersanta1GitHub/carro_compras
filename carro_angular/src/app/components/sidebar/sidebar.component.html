@@ -1,14 +1,11 @@
 <mat-sidenav-container autosize>
   <mat-sidenav #sidenav mode="side" opened="isExpanded">
     <mat-nav-list>
-
+      <h2 *ngIf="isExpanded" style="color: blue;">Carrito Express</h2>
       <mat-list-item (click)="isExpanded = !isExpanded">
         <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
         </mat-icon>
       </mat-list-item>
-
-      <h2>Todas las categorias</h2>
-
       <mat-list-item >
         <span *ngIf="isExpanded" class="menu-item">Campañas y ofertas</span>
       </mat-list-item>
