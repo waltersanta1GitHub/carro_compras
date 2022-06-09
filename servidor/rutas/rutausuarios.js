@@ -73,23 +73,18 @@ router.post("/login", async (req, res) => {
     decryptedPassword = cryptor.decrypt({
       iv: iv_value,
       content: content_value,
-    });
-    console.log(decryptedPassword);
-    console.log(user[0].password);
-
+    });    
     if (user && decryptedPassword == password) {
       // Crea el token
       const token = jwt.sign(
-        { user_id: user._id, username },
+        { user_id: user[0]._id, username },
         config.TOKEN_KEY,
         {
           expiresIn: "1h",
         }
-      );
+      ); 
 
-      user.token = token;
-
-      res.status(200).json(user);
+      res.status(200).json( { user:user[0],token: token });
     }
     res.status(400).send("Usuario o contrasena invalidos");
   } catch (err) {
