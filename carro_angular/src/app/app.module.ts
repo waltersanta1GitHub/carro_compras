@@ -22,6 +22,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCommonModule} from '@angular/material/core';
+import {MatListModule} from '@angular/material/list';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -61,7 +62,7 @@ import { CarroGuard } from './services/carro.guard';
     HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,MatButtonModule,MatCheckboxModule,MatDatepickerModule,MatDialogModule,MatFormFieldModule,MatIconModule,MatInputModule,MatMenuModule,
-    MatProgressBarModule,MatProgressSpinnerModule,MatSelectModule,MatSidenavModule,MatStepperModule,MatToolbarModule,MatTabsModule,MatCommonModule,
+    MatProgressBarModule,MatProgressSpinnerModule,MatSelectModule,MatSidenavModule,MatStepperModule,MatToolbarModule,MatTabsModule,MatCommonModule,MatListModule,
   ],
   providers: [ CarroGuard,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
