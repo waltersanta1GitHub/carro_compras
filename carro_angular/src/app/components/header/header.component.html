@@ -1,21 +1,33 @@
 <p>
     <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>{{nombreaplicacion}}</span>
+      <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
+
+      </i>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <input type="text" matInput placeholder="Search for products">
+        <mat-icon>search</mat-icon>
+      </mat-form-field>
+
       <span class="example-spacer"></span>
       <button routerLink="/home" mat-icon-button class="example-icon favorite-icon"
         aria-label="Example icon-button with heart icon">
         <mat-icon>add_shopping_cart</mat-icon>
       </button>
-      <button routerLink="/login" mat-icon-button class="example-icon favorite-icon"
-        aria-label="Example icon-button with share icon">
-        <mat-icon>verified_user</mat-icon>
-      </button>
-      <button routerLink="/register" mat-icon-button class="example-icon favorite-icon"
-        aria-label="Example icon-button with share icon">
-        <mat-icon>perm_identity</mat-icon>
-      </button>
+      <section>
+        <div class="example-button-row">
+          <button mat-raised-button>Login</button>
+        </div>
+      </section>
+      <section>
+        <div class="example-button-row">
+          <button mat-raised-button>Register</button>
+        </div>
+      </section>
+      <section>
+        <div class="example-button-row">
+          <button mat-raised-button>Logout</button>
+        </div>
+      </section>
     </mat-toolbar>
   </p>
