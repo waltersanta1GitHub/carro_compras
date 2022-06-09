@@ -7,20 +7,39 @@
         </mat-icon>
       </mat-list-item>
 
-      <mat-list-item [routerLink]="'dashboard'">
-        <mat-icon mat-list-icon>home</mat-icon>
-        <span *ngIf="isExpanded" class="menu-item">Dashboard</span>
+      <h2>Todas las categorias</h2>
+
+      <mat-list-item >
+        <span *ngIf="isExpanded" class="menu-item">Campañas y ofertas</span>
       </mat-list-item>
 
-      <mat-list-item [routerLink]="'info'">
-        <mat-icon mat-list-icon>important_devices</mat-icon>
-        <span *ngIf="isExpanded" class="menu-item">Info</span>
+      <mat-list-item >
+        <span *ngIf="isExpanded" class="menu-item">Informatica</span>
       </mat-list-item>
 
-      <mat-list-item [routerLink]="'user'">
-        <mat-icon mat-list-icon>supervisor_account</mat-icon>
-        <span *ngIf="isExpanded" class="menu-item">User</span>
+      <mat-list-item >
+        <span *ngIf="isExpanded" class="menu-item">Gaming</span>
       </mat-list-item>
+
+      <mat-list-item >
+        <span *ngIf="isExpanded" class="menu-item">Accesorios de Informatica</span>
+      </mat-list-item>
+
+      <mat-list-item >
+        <span *ngIf="isExpanded" class="menu-item">Telefonia</span>
+      </mat-list-item>
+      <mat-list-item >
+        <span *ngIf="isExpanded" class="menu-item">Television</span>
+      </mat-list-item>
+
+      <mat-list-item >
+        <span *ngIf="isExpanded" class="menu-item">Audio y HIFI</span>
+      </mat-list-item>
+
+      <mat-list-item >
+        <span *ngIf="isExpanded" class="menu-item">Smart Home</span>
+      </mat-list-item>
+
 
     </mat-nav-list>
   </mat-sidenav>
@@ -28,7 +47,7 @@
   <!-- Content - rendered Content for the current router path into the <router-outlet>, e.g. /dashboard or /info-->
   <mat-sidenav-content>
     <mat-toolbar>
-      <h4>Hello everyone</h4>
+      <h4>Hello everyone matt tool bar</h4>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
