@@ -1,51 +1,24 @@
 <mat-sidenav-container autosize>
   <mat-sidenav #sidenav mode="side" opened="isExpanded">
     <mat-nav-list>
-      <h2 *ngIf="isExpanded" style="color: blue;">Carrito Express</h2>
+      <div>
+        <h2 *ngIf="isExpanded" style="color: blue;">Carrito Express</h2>
+      </div>
+
       <mat-list-item (click)="isExpanded = !isExpanded">
         <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
         </mat-icon>
       </mat-list-item>
-      <mat-list-item >
-        <span *ngIf="isExpanded" class="menu-item">Campañas y ofertas</span>
-      </mat-list-item>
 
-      <mat-list-item >
-        <span *ngIf="isExpanded" class="menu-item">Informatica</span>
+      <mat-list-item  *ngFor="let titulo of listaTitulos">
+        <span *ngIf="isExpanded"
+        class="menu-item">{{titulo}}</span>
       </mat-list-item>
-
-      <mat-list-item >
-        <span *ngIf="isExpanded" class="menu-item">Gaming</span>
-      </mat-list-item>
-
-      <mat-list-item >
-        <span *ngIf="isExpanded" class="menu-item">Accesorios de Informatica</span>
-      </mat-list-item>
-
-      <mat-list-item >
-        <span *ngIf="isExpanded" class="menu-item">Telefonia</span>
-      </mat-list-item>
-      <mat-list-item >
-        <span *ngIf="isExpanded" class="menu-item">Television</span>
-      </mat-list-item>
-
-      <mat-list-item >
-        <span *ngIf="isExpanded" class="menu-item">Audio y HIFI</span>
-      </mat-list-item>
-
-      <mat-list-item >
-        <span *ngIf="isExpanded" class="menu-item">Smart Home</span>
-      </mat-list-item>
-
 
     </mat-nav-list>
   </mat-sidenav>
 
-  <!-- Content - rendered Content for the current router path into the <router-outlet>, e.g. /dashboard or /info-->
-  <mat-sidenav-content>
-    <mat-toolbar>
-      <h4>Hello everyone matt tool bar</h4>
-    </mat-toolbar>
+ <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 

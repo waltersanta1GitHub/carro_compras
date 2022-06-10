@@ -11,8 +11,6 @@ mat-sidenav-container >  mat-sidenav > mat-nav-list > chevron-button {
     transform: rotate(0deg);
 }
 
-mat-sidenav-container >  mat-sidenav > mat-nav-list > chevron-button.rotated{
-
+mat-sidenav-container >  mat-sidenav > mat-nav-list > chevron-button > .rotated{
     transform: rotate(180deg);
-
 }
