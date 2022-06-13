@@ -4,29 +4,28 @@
 
       </i>
 
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field appearance="fill">
         <input type="text" matInput placeholder="Search for products">
         <mat-icon>search</mat-icon>
       </mat-form-field>
 
       <span class="example-spacer"></span>
-      <button routerLink="/home" mat-icon-button class="example-icon favorite-icon"
-        aria-label="Example icon-button with heart icon">
+      <button routerLink="/home" mat-icon-button>
         <mat-icon>add_shopping_cart</mat-icon>
       </button>
       <section>
-        <div class="example-button-row">
-          <button mat-raised-button>Login</button>
+        <div>
+          <button routerLink="/login" mat-raised-button color="primary">Login</button>
         </div>
       </section>
       <section>
-        <div class="example-button-row">
-          <button mat-raised-button>Register</button>
+        <div>
+          <button routerLink="/register" mat-raised-button color="primary">Register</button>
         </div>
       </section>
       <section>
-        <div class="example-button-row">
-          <button mat-raised-button>Logout</button>
+        <div>
+          <button routerLink="/logout" mat-raised-button color="primary">Logout</button>
         </div>
       </section>
     </mat-toolbar>
