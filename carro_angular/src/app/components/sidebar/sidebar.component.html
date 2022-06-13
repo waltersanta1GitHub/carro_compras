@@ -1,35 +1,24 @@
 <mat-sidenav-container autosize>
   <mat-sidenav #sidenav mode="side" opened="isExpanded">
     <mat-nav-list>
+      <div>
+        <h2 *ngIf="isExpanded" style="color: blue;">Carrito Express</h2>
+      </div>
 
       <mat-list-item (click)="isExpanded = !isExpanded">
         <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
         </mat-icon>
       </mat-list-item>
 
-      <mat-list-item [routerLink]="'dashboard'">
-        <mat-icon mat-list-icon>home</mat-icon>
-        <span *ngIf="isExpanded" class="menu-item">Dashboard</span>
-      </mat-list-item>
-
-      <mat-list-item [routerLink]="'info'">
-        <mat-icon mat-list-icon>important_devices</mat-icon>
-        <span *ngIf="isExpanded" class="menu-item">Info</span>
-      </mat-list-item>
-
-      <mat-list-item [routerLink]="'user'">
-        <mat-icon mat-list-icon>supervisor_account</mat-icon>
-        <span *ngIf="isExpanded" class="menu-item">User</span>
+      <mat-list-item  *ngFor="let titulo of listaTitulos">
+        <span *ngIf="isExpanded"
+        class="menu-item">{{titulo}}</span>
       </mat-list-item>
 
     </mat-nav-list>
   </mat-sidenav>
 
-  <!-- Content - rendered Content for the current router path into the <router-outlet>, e.g. /dashboard or /info-->
-  <mat-sidenav-content>
-    <mat-toolbar>
-      <h4>Hello everyone</h4>
-    </mat-toolbar>
+ <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 
