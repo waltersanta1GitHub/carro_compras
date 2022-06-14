@@ -5,24 +5,25 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor, ErrorInterceptor } from './helpers';
 
 // Material
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatSelectModule} from '@angular/material/select';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatCommonModule} from '@angular/material/core';
-import {MatListModule} from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCommonModule } from '@angular/material/core';
+import { MatListModule } from '@angular/material/list';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -53,7 +54,8 @@ import { CarroGuard } from './services/carro.guard';
     RegisterComponent,
     ShoppingcardlistComponent,
     SidebarComponent,
-    PaypageComponent
+    PaypageComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -61,10 +63,10 @@ import { CarroGuard } from './services/carro.guard';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatCardModule,MatButtonModule,MatCheckboxModule,MatDatepickerModule,MatDialogModule,MatFormFieldModule,MatIconModule,MatInputModule,MatMenuModule,
-    MatProgressBarModule,MatProgressSpinnerModule,MatSelectModule,MatSidenavModule,MatStepperModule,MatToolbarModule,MatTabsModule,MatCommonModule,MatListModule,
+    MatCardModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule,
+    MatProgressBarModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatStepperModule, MatToolbarModule, MatTabsModule, MatCommonModule, MatListModule,
   ],
-  providers: [ CarroGuard,
+  providers: [CarroGuard,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
