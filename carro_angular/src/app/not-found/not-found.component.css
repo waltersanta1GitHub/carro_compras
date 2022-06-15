@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+}
+
+.flex-container {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.row {
+  width: auto;
+}
+.flex-item {
+  width: 200px;
+  height: 100px;
+  padding-top: 40px;
+  background-color: tomato;
+  color: white;
+  font-weight: bold;
+  font-size: 72px;
+  text-align: center;
+}
+
+.flex-label {
+  width: 200px;
+  height: 60px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+

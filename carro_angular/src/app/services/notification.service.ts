@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({ providedIn: 'root' })
 export class AlertService {
     private subject = new Subject<any>();
     private keepAfterRouteChange = false;
 
-    constructor(private router: Router) {
+    constructor(private router: Router,private toastr: ToastrService) {
         // clear alert messages on route change unless 'keepAfterRouteChange' flag is true
         this.router.events.subscribe(event => {
             if (event instanceof NavigationStart) {
@@ -16,7 +17,7 @@ export class AlertService {
                     this.keepAfterRouteChange = false;
                 } else {
                     // clear alert message
-                    this.clear();
+                
                 }
             }
         });
@@ -25,19 +26,13 @@ export class AlertService {
     getAlert(): Observable<any> {
         return this.subject.asObservable();
     }
-
-    success(message: string, keepAfterRouteChange = false) {
-        this.keepAfterRouteChange = keepAfterRouteChange;
-        this.subject.next({ type: 'success', text: message });
+    mostrarMensajeExitoso(message:string, title:string){
+        this.toastr.success(message, title)
+    }
+    
+    mostrarError(message:string, title:string){
+        this.toastr.error(message, title)
     }
 
-    error(message: string, keepAfterRouteChange = false) {
-        this.keepAfterRouteChange = keepAfterRouteChange;
-        this.subject.next({ type: 'error', text: message });
-    }
 
-    clear() {
-        // clear by calling subject.next() without parameters
-        this.subject.next();
-    }
 }

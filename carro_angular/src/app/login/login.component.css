@@ -1,0 +1,31 @@
+.login-form {
+    width: 400px;
+    background-color: rgb(209, 202, 202);
+    margin: auto;
+    margin-top: 180px;
+    box-shadow: 7px 13px 37px #000;
+    padding: 20px 30px;
+    border-top: 4px solid #017bab;
+    color: white;
+
+}
+
+
+
+button {
+    width: 100%;
+    background: rgb(68, 68, 175);
+    border: none;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.controlers {
+    width: 100%;
+    border: 1px solid #017bab;
+    margin-bottom: 15px;
+    background-color: rgb(209, 202, 202);
+    font-size: 14px;
+    font-weight: bold;
+
+}

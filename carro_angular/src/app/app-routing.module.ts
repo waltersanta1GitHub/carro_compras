@@ -25,8 +25,13 @@ const routes: Routes = [
     path:'payment', component: PaypageComponent, canActivate:[CarroGuard]
   },
   {
-    path: 'notFound', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
-  }];
+    path: 'notFound', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule),
+  },
+  {
+    path: '**', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
+
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

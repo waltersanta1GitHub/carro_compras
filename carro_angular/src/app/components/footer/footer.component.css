@@ -1,0 +1,86 @@
+footer{
+    width: 100%;
+    padding: 100px 0 30px;
+    background-color: #575555f3;
+    background-size: cover;
+    color: hsl(355, 14%, 85%);
+    bottom: 0;
+    position: absolute;
+}
+.contenido_footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    flex-direction: column; 
+    color: antiquewhite;  
+}
+.pagos-icon{
+    
+    flex-direction: column;
+    padding: 40px;
+    flex-direction:column;   
+
+}
+.pagos-icon img{
+    width: 36px;
+    height: 36px;
+}
+
+.envio-icon{
+    
+    flex-direction:column;
+    padding: 40px;
+    font-style: italic;
+    flex-direction:column;  
+     
+}
+
+.columna_1{
+    display: flex;
+    flex-direction:column;
+    padding: 40px;
+    
+}
+.columna_2{
+    display: flex;
+    flex-direction:column;
+    padding: 40px;
+}
+.columna_3{
+    display: flex;
+    flex-direction:column;
+    padding: 40px;
+}
+.columna_4{
+    display: flex;
+    flex-direction:column;
+    padding: 40px;
+    
+}
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+col{
+    flex-basis:25%;
+    padding: 10px;
+    }
+    .logo{
+    
+    width: 80px;
+    margin-bottom:30px;
+    }
+
+ a, a:link, a:visited, a:focus, a:hover, a:active{
+        
+        text-decoration:none; 
+        
+      }
+
+
+

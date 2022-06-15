@@ -1,1 +1,32 @@
-<p>header works!</p>
+<p>
+    <mat-toolbar color="primary">
+      <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
+
+      </i>
+
+      <mat-form-field appearance="fill">
+        <input type="text" matInput placeholder="Search for products">
+        <mat-icon>search</mat-icon>
+      </mat-form-field>
+
+      <span class="example-spacer"></span>
+      <button routerLink="/home" mat-icon-button>
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+      <section>
+        <div>
+          <button routerLink="/login" mat-raised-button color="primary">Login</button>
+        </div>
+      </section>
+      <section>
+        <div>
+          <button routerLink="/register" mat-raised-button color="primary">Register</button>
+        </div>
+      </section>
+      <section>
+        <div>
+          <button routerLink="/logout" mat-raised-button color="primary">Logout</button>
+        </div>
+      </section>
+    </mat-toolbar>
+  </p>
