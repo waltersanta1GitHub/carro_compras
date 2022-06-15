@@ -1,17 +1,8 @@
 <div class="login-form">
-    <mat-card>
-        <mat-card-content>
-            <h1>LOGIN</h1>
-            <form [formGroup]="loginForm" (ngSubmit)="hizoClick()">
-                <mat-form-field class="full-width-input separador">
-                    <input formControlName="usuario" text="text" matInputplaceholder="Usuario" required />
-                </mat-form-field>
-                <mat-form-field class="full-width-input separador">
-                    <input formControlName="contrasena" type="password" matInput placeholder="Password" required />
-                </mat-form-field>
-                <button type="submit" mat-raised-button color="primary" (click)="hizoClick">Login</button>
-                <a href="#" mat-raised-button>Registrarse</a>
-            </form>
-        </mat-card-content>
-    </mat-card>
+    <form [formGroup]="loginForm" (ngSubmit)="hizoClick()">
+        <input class="controlers" formControlName="usuario" text="text" value="" matInputplaceholder="Username" placeholder="Username" required />
+        <input class="controlers" formControlName="contrasena" type="password" value="" matInput placeholder="Password" required />
+        <button type="submit" mat-raised-button color="primary" (click)="hizoClick">Login</button>
+
+    </form>
 </div>

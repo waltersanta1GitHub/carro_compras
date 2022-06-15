@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertService } from '../services/notification.service';
+//import { AlertService } from '../services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   });
 
 
-  constructor(private router: Router, private sofia: FormBuilder, private notifyService: AlertService) { }
+  constructor(private router: Router, private sofia: FormBuilder) { }
 
   ngOnInit(): void {
   }
@@ -24,11 +24,11 @@ export class LoginComponent implements OnInit {
     const valorformulario = this.loginForm.value;
 
     if (valorformulario.usuario == "gabi" && valorformulario.contrasena == ("1111")) {
-      this.notifyService.mostrarMensajeExitoso('CORRECTO', 'FELIDADES')
+     // this.notifyService.mostrarMensajeExitoso('CORRECTO', 'FELIDADES')
       this.router.navigateByUrl('/home');
     }
     else {
-      this.notifyService.mostrarError('ERROR', 'FALSO')
+      //this.notifyService.mostrarError('ERROR', 'FALSO')
       this.router.navigateByUrl('/login');
     }
 
