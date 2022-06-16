@@ -1,4 +1,5 @@
 <div class="register-container">
+  <form [formGroup]="registerForm" (ngSubmit)="registrar()">
     <mat-card>
         <mat-card-content>
             <div class="titulo-centrado">
@@ -16,4 +17,5 @@
             <button type="submit" mat-raised-button color="primary">Register</button>
         </mat-card-content>
     </mat-card>
+  </form>
 </div>
