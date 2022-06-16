@@ -22,12 +22,16 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  hizoClick(): void {
+  login(): void {
     const valorformulario = this.loginForm.value;
 
     if (valorformulario.usuario == "gabi" && valorformulario.contrasena == ("1111")) {
       this.notifyService.mostrarMensajeExitoso('CORRECTO', 'FELIDADES');
-      // this.authService.login();
+      this.authService.login(valorformulario.usuario,valorformulario.contrasena).subscribe(
+        (resultado)=>{
+          this.notifyService.mostrarInformacion('esta bien'+resultado,'informacion');
+        }
+      );
       this.router.navigateByUrl('/home');
     }
     else {

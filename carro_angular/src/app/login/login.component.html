@@ -1,7 +1,7 @@
 <div class="login-form">
-    <form [formGroup]="loginForm" (ngSubmit)="hizoClick()">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
         <input class="controlers" formControlName="usuario" text="text" value="" matInputplaceholder="Username" placeholder="Username" required />
         <input class="controlers" formControlName="contrasena" type="password" value="" matInput placeholder="Password" required />
-        <button type="submit" mat-raised-button color="primary" (click)="hizoClick">Login</button>
+        <button type="submit" mat-raised-button color="primary" >Login</button>
     </form>
 </div>
