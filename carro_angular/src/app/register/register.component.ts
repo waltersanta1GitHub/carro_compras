@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   registerForm = this.formBuilder.group({
     usuario: [''],
     contrasena: [''],
+    repetircontrasena: [''],
   });
 
 
