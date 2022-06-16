@@ -3,6 +3,8 @@ import { Observable, Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable({ providedIn: 'root' })
+
+
 export class AlertService {
   private subject = new Subject<any>();
   private keepAfterRouteChange = false;
