@@ -47,6 +47,11 @@ export class AuthenticationService {
     localStorage.removeItem('token');
   }
 
+
+  register(username: string, password: string, repeatpassword: string) {
+    console.log("estas en lo cierto chaparropon");
+  }
+
   private validarToken(): void {
     const tokenUsuario = localStorage.getItem('token')||"";
     const isExpirado = helper.isTokenExpired(tokenUsuario);

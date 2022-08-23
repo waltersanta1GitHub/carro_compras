@@ -1,0 +1,73 @@
+
+form-control{
+    border-radius: 3px;
+    width: 600px;
+    margin-left: 20px;
+
+}
+.item{
+    margin:0px 15px ;
+    text-align: center;
+}
+.item a:hover{ 
+    color: blue;
+}
+.card{
+    padding: 20px;
+    margin: 50px;
+}
+.cart img{
+    width: 200px;
+    height: 200px;
+    margin-bottom:15px ;
+    transition: 0.3 s ease-in-out;
+}
+.card img:hover{
+    transition: o.3 s ease-in-out;
+    transform: scale(1.1);
+    
+}
+.card top{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: white;
+    background-clip: border-box;
+    border: 1px solid black;
+    border-radius: .25rem;
+
+}
+.item img {
+    width: 10px ;
+}
+.sofiaimagen{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    display: block;
+    margin: auto;
+  }
+
+.cuadro{
+    border-color: rgba(205, 199, 199, 0.895);
+    border-style: solid;
+    width: 320px;
+    height: 370px;
+    
+
+}
+.button{
+    background-color:#5757eb;
+    border: none;
+    color: white;
+    padding: 16px 110px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+}

@@ -24,6 +24,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCommonModule } from '@angular/material/core';
 import { MatListModule } from '@angular/material/list';
 
+// Notificador Toast
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -55,7 +58,7 @@ import { CarroGuard } from './services/carro.guard';
     ShoppingcardlistComponent,
     SidebarComponent,
     PaypageComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,7 @@ import { CarroGuard } from './services/carro.guard';
     BrowserAnimationsModule,
     MatCardModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule,
     MatProgressBarModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule, MatStepperModule, MatToolbarModule, MatTabsModule, MatCommonModule, MatListModule,
+    ToastrModule.forRoot()
   ],
   providers: [CarroGuard,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
