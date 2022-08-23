@@ -6,6 +6,7 @@ const app = express();
 const productos = require('./rutas/rutaproducto');
 const usuarios = require('./rutas/rutausuarios');
 
+
 const port = 3000;
 app.use(express.json());
 app.use(
