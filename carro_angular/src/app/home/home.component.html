@@ -1,2 +1,9 @@
 <p>home component works!</p>
+
+<li *ngFor="let product of listaprod">
+  <h2>{{ product.id}} - {{product.name}} y el precio es: {{product.price}} y la ruta esta {{product.img}}</h2>
+  <h4>
+   {{product.desc}}
+  </h4>
+</li>
 <app-footer></app-footer>

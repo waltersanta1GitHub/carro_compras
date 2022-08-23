@@ -31,7 +31,7 @@ export class AuthenticationService {
 
   login(username: string, password: string) {
     return this.http
-      .post<any>(`${this.apiUrl}/usuarios/autenticar`, { username, password })
+      .post<any>(`/api/usuarios/autenticar`, { username, password })
       .pipe(
         map((user) => {
           localStorage.setItem('currentUser', JSON.stringify(user));
@@ -48,8 +48,18 @@ export class AuthenticationService {
   }
 
 
-  register(username: string, password: string, repeatpassword: string) {
+  register(username: string, password: string) {
     console.log("estas en lo cierto chaparropon");
+    return this.http
+    .post<any>(`/api/usuarios/register`, { username, password })
+    .pipe(
+      map((user) => {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        localStorage.setItem('token', "TOKENSAMEPM123434$$%");
+        this.currentUserSubject.next(user);
+        return user;
+      })
+    );
   }
 
   private validarToken(): void {
