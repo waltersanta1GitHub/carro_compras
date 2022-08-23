@@ -6,6 +6,7 @@ const app = express();
 const productos = require('./rutas/rutaproducto');
 const usuarios = require('./rutas/rutausuarios');
 
+
 const port = 3000;
 app.use(express.json());
 app.use(
@@ -15,14 +16,21 @@ app.use(
 );
 
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+ next();
+});
+
+
 app.get("/", (req, res) => {
   res.json({ message: "Servidor API de Carrito de Compras corriendo OK" });
 });
 
 
 
-app.use("/productos", productos);
-app.use("/usuarios", usuarios);
+app.use("/api/productos", productos);
+app.use("/api/usuarios", usuarios);
 
 
 /* Error handler middleware */
