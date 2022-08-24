@@ -26,4 +26,19 @@ export class HomeComponent implements OnInit {
 
   }
 
+
+  searchProduct(productname: string){
+
+    console.log(productname);
+
+
+    this._productervice.getProductsByName(productname).subscribe(
+
+      ((respuesta: any) => {
+        this.listaprod = respuesta.data;
+    }));
+
+
+  }
+
 }

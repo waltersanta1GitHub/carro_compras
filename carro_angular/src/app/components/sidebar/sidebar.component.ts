@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { LinkModel } from 'src/app/models/linkmodel';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,14 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   isExpanded: boolean = false;
-  @Input() listaTitulos: string[] = [];
+  @Input() listaTitulos: LinkModel[] = [];
 
   constructor() {
     if (this.listaTitulos.length <= 0) {
       this.listaTitulos = [
-        'Escriba aqui un titulo 1',
-        'Escriba aqui un titulo 2',
-        'Escriba aqui un titulo 3',
+        {titulo:"Home", url:"/home"},
+        {titulo:"Pagos", url:"/payments"}
       ];
     }
   }

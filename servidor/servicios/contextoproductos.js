@@ -18,6 +18,27 @@ async function getAllProducts(page = 1){
 }
 
 
+
+async function getProductsByName(name){
+  page = 1;
+  console.log(name);
+  const offset = helper.getOffset(page, config.listPerPage);
+  const rows = await db.query(
+    `SELECT   *
+    FROM  products
+    WHERE products.name like '%${name}%'`
+  );
+  const data = helper.emptyOrRows(rows);
+  const meta = {page};
+
+  return {
+    data,
+    meta
+  }
+}
+
+
+
 async function create(producto){
     const result = await db.query(
       `INSERT INTO products 
@@ -70,7 +91,7 @@ async function create(producto){
 
 
 module.exports = {
-  getMultiple: getAllProducts,
+  getMultiple: getAllProducts, getProductsByName,
   create,
   update,
   remove

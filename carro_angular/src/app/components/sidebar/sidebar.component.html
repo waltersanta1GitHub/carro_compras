@@ -10,16 +10,14 @@
         </mat-icon>
       </mat-list-item>
 
-      <mat-list-item  *ngFor="let titulo of listaTitulos">
-        <span *ngIf="isExpanded"
-        class="menu-item">{{titulo}}</span>
+      <mat-list-item  *ngFor="let item of listaTitulos">
+        <a *ngIf="isExpanded" [routerLink]="item.url" mat-menu-item>{{item.titulo}}</a>
       </mat-list-item>
 
     </mat-nav-list>
   </mat-sidenav>
 
  <mat-sidenav-content>
-   
+  <router-outlet></router-outlet>
   </mat-sidenav-content>
-
 </mat-sidenav-container>

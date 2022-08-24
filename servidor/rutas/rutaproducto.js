@@ -13,6 +13,20 @@ router.get('/', async function(req, res, next) {
 });
 
 
+/* GET Productos By Name*/
+router.get('/ProductsByName', async function(req, res, next) {
+  try {      
+  
+    res.json(await productos.getProductsByName(req.query.name));
+  } catch (err) {
+    console.error(err.message);
+    next(err);
+  }
+});
+
+
+
+
 /* POST productos */
 router.post('/', async function(req, res, next) {
     try {
