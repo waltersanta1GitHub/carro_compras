@@ -20,16 +20,12 @@
               <td>{{ prod.id }}</td>
               <td>{{ prod.name }}</td>
               <td><img class="tamano-img" [src]="prod.img" /></td>
+              <td>{{prod.desc}}</td>
+              <td>{{prod.price}}€</td>
+              <td>{{prod.quantity}}</td>
+              <td>{{prod.quantity* prod.price}}€</td>
               <td>
-                Electronic Arts EA SPORTS FIFA 14 Basic PlayStation 4 English
-                video - Game (PlayStation 4, Sports, Multiplayer, E (for
-                everyone), Physical support)
-              </td>
-              <td>4.17€</td>
-              <td>1</td>
-              <td>4.17€</td>
-              <td>
-                <button class="btn btn-danger">
+                <button (click)="quitarProducto()"  class="btn btn-danger">
                   <mat-icon>delete</mat-icon>
                 </button>
               </td>
@@ -37,8 +33,9 @@
           </tbody>
         </table>
       </div>
-      <div> <h1>Total IVA: {{totalImpuestos}}</h1> </div>
-      <div> <h1>Total a pagar: {{totalAPagar}}</h1> </div>
+      <div> <h1>Total: {{cartItem.totalprice -cartItem.tax}}</h1> </div>
+      <div> <h1>IVA: {{ cartItem.tax}}</h1> </div>
+      <div> <h1>Total a pagar: {{cartItem.totalprice}}</h1> </div>
     </div>
   </div>
 </ng-container>

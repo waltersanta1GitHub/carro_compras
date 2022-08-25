@@ -17,7 +17,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {path:'products',component:ProductcardComponent},
-  {path:'cart',component:ShoppingcardlistComponent},
   {
     path:'home', component: HomeComponent
   },
