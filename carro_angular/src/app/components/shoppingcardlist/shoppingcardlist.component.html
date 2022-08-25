@@ -1,66 +1,61 @@
 <ng-container *ngIf="true">
-   <div class="container">
-    <div >
-        <div >
-            <table class="table">
-                <thead >
-                    <tr>
-                        <th>Sr.No</th>
-                        <th>Product name</th>
-                        <th>Product image</th>
-                        <th>Description</th>
-                        <th >Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Fifa 19</td>
-                        <td><img class="tamano-img" src="https://tse2.mm.bing.net/th?id=OIP.nf3I7AlUzzxD3oGJ6uOg6gHaIG&pid=Api&P=0&w=142&h=156"> </td>
-                        <td>Electronic Arts EA SPORTS FIFA 14 Basic
-                             PlayStation 4 English video -
-                              Game (PlayStation 4, Sports, Multiplayer, 
-                              E (for everyone), Physical support)</td>
-                        <td>4.17€</td>
-                        <td>1</td>
-                        <td>4.17€</td>
-                        <td>
-                            <button class="btn btn-danger"><mat-icon>delete</mat-icon></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Sony Glacier White Playstation 4 500GB Console</td>
-                        <td><img class="tamano-img" src="https://tse3.mm.bing.net/th?id=OIP.NzBl7zCigwJet7TWCkGMbAHaIq&pid=Api&P=0&w=133&h=156"></td>
-                        <td>PlayStation 4 redefines rich and immersive gameplay with powerful graphics and speed, intelligent personalisation, deeply integrated social capabilities, and innovative second-screen features</td>
-                        <td>340.00€</td>
-                        <td>1</td>
-                        <td>340.00€</td>
-                        <td>
-                            <button><mat-icon>delete</mat-icon></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+  <div class="container">
+    <div>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Sr.No</th>
+              <th>Product name</th>
+              <th>Product image</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let prod of cartItem.products">
+              <td>{{ prod.id }}</td>
+              <td>{{ prod.name }}</td>
+              <td><img class="tamano-img" [src]="prod.img" /></td>
+              <td>
+                Electronic Arts EA SPORTS FIFA 14 Basic PlayStation 4 English
+                video - Game (PlayStation 4, Sports, Multiplayer, E (for
+                everyone), Physical support)
+              </td>
+              <td>4.17€</td>
+              <td>1</td>
+              <td>4.17€</td>
+              <td>
+                <button class="btn btn-danger">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div> <h1>Total IVA: {{totalImpuestos}}</h1> </div>
+      <div> <h1>Total a pagar: {{totalAPagar}}</h1> </div>
     </div>
-   </div>
+  </div>
 </ng-container>
 
-
 <ng-container *ngIf="false">
-    <div class="container">
-        <div class="card">
-            <h5 class="card-title">My Cart</h5>
-        </div>
-        <div class="center">
-            <img src="https://www.eventsqed.com/Images/empty-cart-icon-min.png" alt="">
-            <h4>Your Cart is empty¡</h4>
-            <h6>Add item toi it now</h6>
-            <button class="btn btn-primary">Shop now</button>
-        </div>
+  <div class="container">
+    <div class="card">
+      <h5 class="card-title">My Cart</h5>
     </div>
+    <div class="center">
+      <img
+        src="https://www.eventsqed.com/Images/empty-cart-icon-min.png"
+        alt=""
+      />
+      <h4>Your Cart is empty¡</h4>
+      <h6>Add item toi it now</h6>
+      <button class="btn btn-primary">Shop now</button>
+    </div>
+  </div>
 </ng-container>

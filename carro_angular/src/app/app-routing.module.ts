@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { catchError } from 'rxjs';
+import { CartComponent } from './cart/cart.component';
 import { ProductcardComponent } from './components/productcard/productcard.component';
 import { ShoppingcardlistComponent } from './components/shoppingcardlist/shoppingcardlist.component';
 import { HomeComponent } from './home/home.component';
@@ -21,13 +22,17 @@ const routes: Routes = [
     path:'home', component: HomeComponent
   },
   {
+    path:'cart', component: CartComponent
+  },
+  {
     path:'login', component: LoginComponent
   },
   {
     path:'register', component: RegisterComponent
   },
   {
-    path:'payment', component: PaypageComponent, canActivate:[CarroGuard]
+    path:'payment', component: PaypageComponent,
+    canActivate:[CarroGuard]
   },
   {
     path: 'notFound', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule),

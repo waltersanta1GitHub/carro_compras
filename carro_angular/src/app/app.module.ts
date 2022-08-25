@@ -44,10 +44,11 @@ import { ShoppingcardlistComponent } from './components/shoppingcardlist/shoppin
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PaypageComponent } from './paypage/paypage.component';
 import { CarroGuard } from './services/carro.guard';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -58,8 +59,8 @@ import { CarroGuard } from './services/carro.guard';
     ShoppingcardlistComponent,
     SidebarComponent,
     PaypageComponent,
-
-  ],
+      CartComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

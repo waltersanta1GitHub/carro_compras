@@ -66,4 +66,10 @@ export class AuthenticationService {
     const tokenUsuario = localStorage.getItem('token')||"";
     const isExpirado = helper.isTokenExpired(tokenUsuario);
   }
+
+  loggedIn(){
+
+    return !!localStorage.getItem('token');
+
+  }
 }
