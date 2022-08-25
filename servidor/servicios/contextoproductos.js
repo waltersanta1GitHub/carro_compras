@@ -21,7 +21,6 @@ async function getAllProducts(page = 1){
 
 async function getProductsByName(name){
   page = 1;
-  console.log(name);
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
     `SELECT   *
