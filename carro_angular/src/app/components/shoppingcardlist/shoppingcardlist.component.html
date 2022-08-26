@@ -24,13 +24,7 @@
               <td>{{ prod.price | currency: "EUR":true }}</td>
               <td>
                 <div>
-                  <button mat-button>
-                    <mat-icon>remove</mat-icon>
-                  </button>
-                  <input class="buttonnumber" matInput [value]="prod.quantity" />
-                  <button mat-button>
-                    <mat-icon>add</mat-icon>
-                  </button>
+                  <app-numberpicker [productd]="prod.id" [numero]="prod.quantity"  (newNumberPickerEvent)="actualizaCantidad($event)"></app-numberpicker>
                 </div>
               </td>
               <td>{{ prod.quantity * prod.price | currency: "EUR":true }}</td>

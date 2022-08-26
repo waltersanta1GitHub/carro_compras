@@ -1,0 +1,37 @@
+
+.divbody{
+  place-items: center;
+  display: grid;
+  height: 10vh ;
+  width: 10vh;
+
+}
+
+
+
+.cart-notification{
+  color: #fff;
+  position: relative;
+
+}
+
+.maticonfont{
+  font-size: 40px;
+}
+
+
+.cart-notification::after{
+  content: attr(data-current-count);
+  top: 0;
+  right:20px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  border: 2px solid #fff;
+}

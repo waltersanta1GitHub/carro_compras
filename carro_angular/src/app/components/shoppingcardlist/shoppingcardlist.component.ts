@@ -47,5 +47,19 @@ this.setTotals();
 
   }
 
+  actualizaCantidad(event:any){
+
+    let productExist: Producto;
+    console.log(event);
+    productExist = this.cartItem.products.find((item: Producto) => item.id === event.id);
+
+    if (productExist) {
+      productExist.quantity = event.quantity;
+
+    }
+
+  }
+
+
 
 }

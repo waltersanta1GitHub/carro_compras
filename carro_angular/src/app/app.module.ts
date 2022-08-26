@@ -45,10 +45,12 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PaypageComponent } from './paypage/paypage.component';
 import { CarroGuard } from './services/carro.guard';
 import { CartComponent } from './cart/cart.component';
+import {NumberpickerComponent} from './components/numberpicker/numberpicker.component';
+import { CartnotificationiconComponent } from './components/cartnotificationicon/cartnotificationicon.component';
 
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -59,7 +61,9 @@ import { CartComponent } from './cart/cart.component';
     ShoppingcardlistComponent,
     SidebarComponent,
     PaypageComponent,
-      CartComponent
+    CartComponent,
+    NumberpickerComponent,
+    CartnotificationiconComponent
    ],
   imports: [
     BrowserModule,
