@@ -1,35 +1,43 @@
 body {
     padding: 2em;
   }
-  
-  table.table { width: 100%; }
-  
-  .table th, .table td { 
-    text-align: left; 
+
+  table.table {
+    width: 100%;
+
+   }
+
+  .table th, .table td {
+    text-align: left;
     padding: 0.25em;
   }
-  
-  .table tr { 
+
+  .table tr {
     border-bottom: 1px solid #DDD;
   }
- 
-  button { 
-    border-radius: 3px; 
-    border: none; 
-    margin: 0 0.25em; 
+
+  button {
+    border-radius: 3px;
+    border: none;
+    margin: 0 0.25em;
     transition: all 0.3s;
     font-family: 'Material Icons' !important;
   }
-  
-  button:hover { 
-    box-shadow: 0 0 4px rgba(3,3,3,0.8); 
+
+  button:hover {
+    box-shadow: 0 0 4px rgba(3,3,3,0.8);
     opacity: 0.9;
   }
-  
-  
+
+  .buttonnumber{
+    width: 20px;
+    text-align: right;
+  }
+
+
   @media screen and (max-width: 800px) {
-    tr { 
-      display: flex; 
+    tr {
+      display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       margin: 0.5em 0;
@@ -41,9 +49,9 @@ body {
     }
 
     }
-  
-  
-  * { box-model: border-box; font-family: 'futura'; }
+
+
+  * { box-model: border-box; font-family:Roboto, "Helvetica Neue", sans-serif;; }
 
   .material-icons{
     font-family: 'Material Icons' !important;

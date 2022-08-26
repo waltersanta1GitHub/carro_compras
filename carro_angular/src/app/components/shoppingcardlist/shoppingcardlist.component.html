@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <div>
-        <table class="table">
+        <table class="table mat-typography">
           <thead>
             <tr>
               <th>Sr.No</th>
@@ -20,12 +20,22 @@
               <td>{{ prod.id }}</td>
               <td>{{ prod.name }}</td>
               <td><img class="tamano-img" [src]="prod.img" /></td>
-              <td>{{prod.desc}}</td>
-              <td>{{prod.price}}€</td>
-              <td>{{prod.quantity}}</td>
-              <td>{{prod.quantity* prod.price}}€</td>
+              <td>{{ prod.desc }}</td>
+              <td>{{ prod.price | currency: "EUR":true }}</td>
               <td>
-                <button (click)="quitarProducto()"  class="btn btn-danger">
+                <div>
+                  <button mat-button>
+                    <mat-icon>remove</mat-icon>
+                  </button>
+                  <input class="buttonnumber" matInput [value]="prod.quantity" />
+                  <button mat-button>
+                    <mat-icon>add</mat-icon>
+                  </button>
+                </div>
+              </td>
+              <td>{{ prod.quantity * prod.price | currency: "EUR":true }}</td>
+              <td>
+                <button (click)="quitarProducto()" class="btn btn-danger">
                   <mat-icon>delete</mat-icon>
                 </button>
               </td>
@@ -33,9 +43,17 @@
           </tbody>
         </table>
       </div>
-      <div> <h1>Total: {{cartItem.totalprice -cartItem.tax}}</h1> </div>
-      <div> <h1>IVA: {{ cartItem.tax}}</h1> </div>
-      <div> <h1>Total a pagar: {{cartItem.totalprice}}</h1> </div>
+      <div>
+        <h1>
+          Total: {{ cartItem.totalprice - cartItem.tax | currency: "EUR":true }}
+        </h1>
+      </div>
+      <div>
+        <h1>IVA: {{ cartItem.tax | currency: "EUR":true }}</h1>
+      </div>
+      <div>
+        <h1>Total a pagar: {{ cartItem.totalprice | currency: "EUR":true }}</h1>
+      </div>
     </div>
   </div>
 </ng-container>
