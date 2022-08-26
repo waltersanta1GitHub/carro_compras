@@ -1,1 +1,86 @@
-<p>paypage works!</p>
+<mat-card class="example-card">
+  <mat-card-title-group>
+    <img
+      mat-card-sm-image
+      src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+    />
+    <mat-card-title>Pagos</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
+    <form [formGroup]="paymentForm" (ngSubmit)="pagar()">
+      <input class="controlers" formControlName="businessname" text="text" value="" matInputplaceholder="businessname" placeholder="Legal Business Name *" required />
+      <input class="controlers" formControlName="businessaddress" type="text" value="" matInput placeholder="business physical Address *" required />
+
+  </form>
+    <p>This card indeterminates progress bar.</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>BACK</button>
+    <button mat-button>CONTINUE</button>
+    <div>
+      <mat-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Card Type</ng-template>
+            <mat-form-field appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" label="Business Information">
+          <form [formGroup]="secondFormGroup">
+            <mat-form-field appearance="fill">
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                     required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup" label="Personal Information">
+          <form [formGroup]="thirdFormGroup">
+            <mat-form-field appearance="fill">
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="thirdCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                     required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup" label="Shipping Details">
+          <form [formGroup]="thirdFormGroup">
+            <mat-form-field appearance="fill">
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="thirdCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                     required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Confirmation</ng-template>
+          <p>You are now done.</p>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+        </mat-step>
+      </mat-stepper>
+    </div>
+  </mat-card-actions>
+
+</mat-card>

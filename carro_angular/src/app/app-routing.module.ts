@@ -30,8 +30,7 @@ const routes: Routes = [
     path:'register', component: RegisterComponent
   },
   {
-    path:'payment', component: PaypageComponent,
-    canActivate:[CarroGuard]
+    path:'payment', component: PaypageComponent
   },
   {
     path: 'notFound', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule),

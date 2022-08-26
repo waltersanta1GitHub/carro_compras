@@ -14,7 +14,8 @@ export class SidebarComponent implements OnInit {
     if (this.listaTitulos.length <= 0) {
       this.listaTitulos = [
         {titulo:"Home", url:"/home"},
-        {titulo:"Carrito Compra", url:"/cart"}
+        {titulo:"Carrito Compra", url:"/cart"},
+        {titulo:"Pago", url:"/payment"}
       ];
     }
   }
