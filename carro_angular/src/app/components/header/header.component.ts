@@ -12,9 +12,18 @@ export class HeaderComponent implements OnInit {
   nombreaplicacion: string = 'mi colombia';
   fecha: string = '';
   hora: string = '';
-  prodInCartCount = 5;
+  prodInCartCount = 0;
 
   constructor(private _cartService: ShoppingcartService) {
+
+    this._cartService.prodCountCountChange.subscribe(
+
+      x => {
+        console.log(x );
+        this.prodInCartCount=x;
+      }
+
+    );
 
 
 

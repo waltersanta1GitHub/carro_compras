@@ -1,27 +1,33 @@
 <p>
-    <mat-toolbar color="primary">
-      <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
+  <mat-toolbar color="primary">
+    <i style="font-size: 40px" class="fas fa-shipping-fast">&nbsp; </i>
 
-      </i>
-
-      <span class="example-spacer"></span>
-      <button routerLink="/cart" mat-icon-button>
-        <app-cartnotificationicon [currentCount]="prodInCartCount"></app-cartnotificationicon>
-      </button>
-      <section>
-        <div>
-          <button routerLink="/login" mat-raised-button color="primary">Login</button>
-        </div>
-      </section>
-      <section>
-        <div>
-          <button routerLink="/register" mat-raised-button color="primary">Register</button>
-        </div>
-      </section>
-      <section>
-        <div>
-          <button routerLink="/logout" mat-raised-button color="primary">Logout</button>
-        </div>
-      </section>
-    </mat-toolbar>
-  </p>
+    <span class="example-spacer"></span>
+    <section>
+        <app-cartnotificationicon
+          [currentCount]="prodInCartCount"
+        ></app-cartnotificationicon>
+    </section>
+    <section>
+      <div>
+        <button routerLink="/login" mat-raised-button color="primary">
+          Login
+        </button>
+      </div>
+    </section>
+    <section>
+      <div>
+        <button routerLink="/register" mat-raised-button color="primary">
+          Register
+        </button>
+      </div>
+    </section>
+    <section>
+      <div>
+        <button routerLink="/logout" mat-raised-button color="primary">
+          Logout
+        </button>
+      </div>
+    </section>
+  </mat-toolbar>
+</p>
