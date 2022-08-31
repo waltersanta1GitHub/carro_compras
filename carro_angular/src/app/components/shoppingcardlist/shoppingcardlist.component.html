@@ -24,12 +24,12 @@
               <td>{{ prod.price | currency: "EUR":true }}</td>
               <td>
                 <div>
-                  <app-numberpicker [productd]="prod.id" [numero]="prod.quantity"  (newNumberPickerEvent)="actualizaCantidad($event)"></app-numberpicker>
+                  <app-numberpicker [productd]="prod.id" [numero]="prod.quantity"  (newNumberPickerEvent)="actualizaCantidad(prod)"></app-numberpicker>
                 </div>
               </td>
               <td>{{ prod.quantity * prod.price | currency: "EUR":true }}</td>
               <td>
-                <button (click)="quitarProducto()" class="btn btn-danger">
+                <button (click)="quitarProducto(prod)" class="btn btn-danger">
                   <mat-icon>delete</mat-icon>
                 </button>
               </td>

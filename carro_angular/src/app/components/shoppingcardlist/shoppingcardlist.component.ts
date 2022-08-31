@@ -40,23 +40,31 @@ this.setTotals();
 
   }
 
-  quitarProducto(){
+  quitarProducto(miProducto:Producto)
 
-    this.cartItem.products= this.cartItem.products.filter((prodActual: Producto) => prodActual.id !== 1);
+    {
+      const index: number = this.cartItem.products.indexOf(miProducto);
+      if (index !== -1) {
+          this.cartItem.products.splice(index, 1);
+      }        
+
     this.setTotals();
 
   }
 
-  actualizaCantidad(event:any){
+  actualizaCantidad(btsProd:Producto){
 
     let productExist: Producto;
-    console.log(event);
-    productExist = this.cartItem.products.find((item: Producto) => item.id === event.id);
+    console.log(btsProd);
+    
+    productExist = this.cartItem.products.find((item: Producto) => item.id === btsProd.id);
 
-    if (productExist) {
-      productExist.quantity = event.quantity;
+   if (productExist) {
+      productExist.quantity = btsProd.quantity;
 
     }
+
+    this.setTotals();
 
   }
 
