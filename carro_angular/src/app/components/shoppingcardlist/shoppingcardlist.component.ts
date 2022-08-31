@@ -53,7 +53,7 @@ export class ShoppingcardlistComponent implements OnInit {
     this.setTotals();
   }
 
-  actualizaCantidad(event: any) {
+  actualizaCantidad(btsProd: any) {
     let productExist: Producto;
     console.log(btsProd);
     
