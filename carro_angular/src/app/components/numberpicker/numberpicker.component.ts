@@ -24,7 +24,12 @@ export class NumberpickerComponent implements OnInit {
 
   onMenosClick(event:any){
     this.numero--;
-    this.productoactual.id=this.productd;
+    this.productoactual = {
+
+      id: this.productd,
+      quantity: this.numero
+    };
+
     this.productoactual.quantity=this.numero;
     this.newNumberPickerEvent.emit(this.productoactual);
   }

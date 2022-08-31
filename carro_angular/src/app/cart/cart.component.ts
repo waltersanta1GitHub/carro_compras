@@ -10,19 +10,18 @@ import { ShoppingcartService } from '../services/Shoppingcart.service';
 export class CartComponent implements OnInit {
 
   mycarttoday:CartModel;
-  nombrehijo:string="Alejo";
 
   constructor(private _cartService: ShoppingcartService) {
 
     this.mycarttoday = _cartService.getCardData();
-    console.log('trae los datos inicales de prod');
-    console.log(this.mycarttoday);
+
 
    }
 
   ngOnInit() {
 
-    console.log('trae los datos inicales de prod');
+
+
   }
 
 
