@@ -14,6 +14,8 @@ export class ShoppingcartService {
   prodCount=0;
 
   constructor() {
+
+
     const currentCard = this.getCardData();
     if (currentCard){
       this.cartItems.next(currentCard);
