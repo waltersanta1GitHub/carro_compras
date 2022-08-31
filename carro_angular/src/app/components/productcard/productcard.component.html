@@ -1,15 +1,15 @@
 <div class="card-top container-fluid">
     <div class="container"></div>
     <div class="row">
-        <ng-container *ngFor="let productofake of productlist">
+        <ng-container >
             <div class="card col-md-3 cuadro" >
-                <img class="sofiaimagen"  src="{{productofake.image}}" alt="">
+                <img class="sofiaimagen"  src="{{producto.img}}" alt="">
                 <h3 style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;text-align: center;">
-                    {{productofake.title}}</h3>
+                    {{producto.name}}</h3>
                 <h4 style="white-space:nowrap;overflow:hidden;text-overflow: ellipsis;max-width: 100ch;text-align: center;">
-                    {{productofake.description}}</h4>
-                <p style="text-align:center"><strong>Price:</strong>$ {{productofake.price}}</p>
-                <button class="btn btn-primary button" >Add to cart</button>
+                    {{producto.desc}}</h4>
+                <p style="text-align:center"><strong>Price:</strong>$ {{producto.price}}</p>
+                <button class="btn btn-primary button" (click)="agregarproducto (producto)">Add to cart</button>
             </div>
         </ng-container>
     </div>

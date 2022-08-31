@@ -1,26 +1,22 @@
 <div>
   <div>
-    <mat-form-field>
-      <input
-        type="text"
-        matInput
-        placeholder="Search Products"
-        (keyup)="searchProduct($any($event).target.value)"
-      />
-      <mat-icon>search</mat-icon>
-    </mat-form-field>
+      <div class="search">
+         <input type="text" class="searchTerm" placeholder="Search products" (keyup)="searchProduct($any($event).target.value)"> 
+         <button type="submit" class="searchButton">
+           <i class="fa fa-search"></i>
+        </button>
+   </div>
   </div>
-  <div>
+<div>
+  <div class="row">
+    <div class="col-md-5">
+    </div>
+  </div>
     <ul style="display: inline-block" *ngFor="let product of listaprod">
       <li style="list-style: none">
-        <h2>
-          {{ product.id }} - {{ product.name }} y el precio es:
-          {{ product.price }}
-        </h2>
-        <h4>
-          {{ product.desc }}
-        </h4>
-        <img [src]="product.img" />
+        <app-productcard [producto]="product"></app-productcard>
+        
+        
       </li>
     </ul>
     <h2 *ngIf="listaprod == null || listaprod.length <= 0">

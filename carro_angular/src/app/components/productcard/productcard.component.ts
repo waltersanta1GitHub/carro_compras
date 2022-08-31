@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Producto } from 'src/app/models/productmodel';
+import { ShoppingcartService } from 'src/app/services/Shoppingcart.service';
 
 @Component({
   selector: 'app-productcard',
@@ -6,22 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./productcard.component.css']
 })
 export class ProductcardComponent implements OnInit {
-  public productlist:any=[
-    {
-      image:"https://img.freepik.com/foto-gratis/huevos-marrones_2829-13455.jpg?w=2000",
-      title:"Mens Premium Casual",
-      description:"Slim fitting style",
-      price:25
-    }
-  ];
-  api: any;
-  
-  constructor() { }
 
+  api: any;
+  @Input () producto:Producto;
+  constructor(private carritoservicio:ShoppingcartService) { }
+
+  
   ngOnInit(): void {
   
    }
-
+  agregarproducto(malumaproduct:Producto){
+  this.carritoservicio.addProductToCart(malumaproduct);
+  }
 
 
   }
