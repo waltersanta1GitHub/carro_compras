@@ -6,47 +6,42 @@ import { ShoppingcartService } from '../services/Shoppingcart.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-
   listaprod: Producto[] = [];
 
-  constructor(private _productervice: ProductService,
-      private _cartService: ShoppingcartService
-     ) {
-
-    console.log("por aqui paso");
-  }
+  constructor(
+    private _productervice: ProductService,
+    private _cartService: ShoppingcartService
+  ) {}
 
   ngOnInit(): void {
+    this._cartService.prodCountCountChange.subscribe({
+      next: (n) => {
+        console.log('Observable A: ' + n);
+      },
+    });
 
+    this._productervice.getAll().subscribe((respuesta: any) => {
+      this.listaprod = respuesta.data;
+    });
+  }
 
-    this._productervice.getAll().subscribe(
-
-      ((respuesta: any) => {
+  searchProduct(productname: string) {
+    this._productervice
+      .getProductsByName(productname)
+      .subscribe((respuesta: any) => {
         this.listaprod = respuesta.data;
-    }));
-
+        this.addproductTocart(this.listaprod[0]);
+      });
   }
 
+  addproductTocart(product: Producto) {
 
-  searchProduct(productname: string){
-
-    this._productervice.getProductsByName(productname).subscribe(
-
-      ((respuesta: any) => {
-        this.listaprod = respuesta.data;
-       this.addproductTocart( this.listaprod[0]);
-    }));
-
-
+    this._cartService.addProductToCart(product);
+    const mycartdata = this._cartService.getCardData();
+    this._cartService.prodCountCountChange.next(mycartdata.products.length);
 
   }
-
-  addproductTocart(product: Producto){
-   this._cartService.addProductToCart(product);
-
-  }
-
 }
