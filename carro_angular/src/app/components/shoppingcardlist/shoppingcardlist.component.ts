@@ -40,7 +40,7 @@ export class ShoppingcardlistComponent implements OnInit {
 
 
 
-  quitarProducto() {
+  quitarProducto(prodActual:Producto) {
     this.cartItem.products = this.cartItem.products.filter(
       (prodActual: Producto) => prodActual.id !== 1
     );
