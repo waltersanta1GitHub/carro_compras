@@ -41,11 +41,27 @@ export class ShoppingcardlistComponent implements OnInit {
 
 
   quitarProducto(prodActual:Producto) {
-    this.cartItem.products = this.cartItem.products.filter(
-      (prodActual: Producto) => prodActual.id !== 1
-    );
+
+    console.log("gabriela");
 
 
+    console.log(prodActual);
+    //this.cartItem.products = this.cartItem.products.filter(
+      //(prodActual: Producto) => prodActual.id !== 1
+    //);
+
+    const index=this.cartItem.products.indexOf(prodActual);
+
+    console.log(index);
+    this.cartItem.products = this.cartItem.products.splice(index, 1);
+    
+    console.log(this.cartItem.products.length);
+    if(this.cartItem.products.length===0){
+
+   // this._cartService.clearCart();
+   console.log(this.cartItem.products);
+
+    }
     this._cartService.prodCountCountChange.next(this.cartItem.products.length);
 
 
